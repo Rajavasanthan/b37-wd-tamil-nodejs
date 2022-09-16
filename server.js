@@ -2,11 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const mongodb = require("mongodb");
+const dotenv = require("dotenv").config()
 const mongoClient = mongodb.MongoClient;
-const URL = "mongodb+srv://vasanth:admin123@cluster0.uqdcgkz.mongodb.net/?retryWrites=true&w=majority";
+const URL = process.env.DB;
 const DB = "batch_37_wd_Tamil";
 let users = [];
 
+// console.log(process)
 // Midleware
 app.use(express.json());
 app.use(
